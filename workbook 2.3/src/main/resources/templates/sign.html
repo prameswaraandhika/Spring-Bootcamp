@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Top Show</title>
+</head>
+<body>
+    <p th:if="${speed > 50}">
+        slow down dude, your speed is <span th:text="${speed}"></span>
+    </p>
+    <p th:unless="${speed > 50}">
+        Speed limit 50, your speed is <span th:text="${speed}"></span>
+    </p>
+</body>
+</html>

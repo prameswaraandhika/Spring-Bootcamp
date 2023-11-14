@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Top Show</title>
+</head>
+<body>
+<h2>IMDB: Top 5 Episodes</h2>
+<table width="100%", border="solid" >
+    <tr>
+        <th>Title</th>
+        <th>Episode</th>
+        <th>Rating</th>
+    </tr>
+    <!--
+        instead accesing an model using this way
+        <tr th:object ="${first}" >
+           <td th:text="${fist.name}"></td>
+           <td th:text="${first.episode}"></td>
+           <td th:text="${first.rating}"></td>
+        </tr>
+
+        we can do more efective using this way
+         <tr th:object ="${first}" >
+           <td th:text="*{name}"></td>
+           <td th:text="*{episode}"></td>
+           <td th:text="*{rating}"></td>
+        </tr>
+    -->
+    <tr th:object ="${first}" >
+       <td th:text="*{name}"></td>
+       <td th:text="*{episode}"></td>
+       <td th:text="*{rating}"></td>
+    </tr>
+    <tr th:object ="${second}" >
+       <td th:text="*{name}"></td>
+       <td th:text="*{episode}"></td>
+       <td th:text="*{rating}"></td>
+    </tr>
+    <tr th:object ="${third}" >
+       <td th:text="*{name}"></td>
+       <td th:text="*{episode}"></td>
+       <td th:text="*{rating}"></td>
+    </tr>
+    <tr th:object ="${fourth}" >
+       <td th:text="*{name}"></td>
+       <td th:text="*{episode}"></td>
+       <td th:text="*{rating}"></td>
+    </tr>
+    <tr th:object ="${fifth}" >
+       <td th:text="*{name}"></td>
+       <td th:text="*{episode}"></td>
+       <td th:text="*{rating}"></td>
+    </tr>
+</table>
+</body>
+</html>
