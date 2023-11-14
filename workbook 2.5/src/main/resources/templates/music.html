@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Top Show</title>
+</head>
+<body>
+    <div th:switch="${band}">
+        <div th:case="'brunomars'">
+            <h2>Bruno Mars</h2>
+            <img src="/img/brunomars.png" width="640" alt="not found"/>
+        </div>
+        <div th:case="'theweeknd'">
+            <h2>The Weeknd</h2>
+            <img src="/img/theweeknd.png" width="1080" alt="not found"/>
+        </div>
+    </div>
+</body>
+</html>
