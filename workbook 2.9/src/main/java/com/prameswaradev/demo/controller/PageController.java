@@ -8,8 +8,12 @@ import org.springframework.web.bind.annotation.GetMapping;
 public class PageController {
 
     @GetMapping(value="/")
-    public String getLandingPage() {
-        return "page";
+    public String home() {
+        return "home";
     }
 
+    @GetMapping(value="/away")
+    public String away() {
+        return "away";
+    }
 }
