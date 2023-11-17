@@ -2,19 +2,51 @@
 <html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>List of Students</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
 </head>
 <body>
-    <h2>List Student</h2>
-    <table>
-        <tr>
-            <th>Name</th>
-            <th>Major</th>
-        </tr>
-        <td th:each="student: ${students}">
-            <td th:text="${student.name}"></td>
-            <td th:text="${student.major}"></td>
+<h2>List of Students</h2>
+<table>
+    <thead>
+    <tr>
+        <th>Name</th>
+        <th>Major</th>
+        <th colspan="2">Action</th>
+    </tr>
+    </thead>
+    <tbody>
+    <a th:href="@{/}" role="button">Back to Form</a>
+    <tr th:if="${#lists.isEmpty(students)}">
+        <td colspan="3">
+            <center>
+                <b>Data not found</b>
+            </center>
         </td>
-    </table>
+    </tr>
+    <tr th:each="student: ${students}">
+        <td th:text="${student.name}"></td>
+        <td th:text="${student.major}"></td>
+        <td> <a role="button" class="update" th:href="@{/(id = ${student.id})}">Update</a></td>
+        <td> <a role="button" class="update" th:href="@{/delete(id = ${student.id})}">Delete</a></td>
+    </tr>
+    </tbody>
+</table>
 </body>
 </html>
